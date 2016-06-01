@@ -2,7 +2,9 @@ FROM gcr.io/google_containers/ubuntu-slim:0.2
 
 ENV TERM=xterm
 
-RUN apt-get update && \
+# disable source repos (speeds up apt-get update)
+RUN sed -i -e 's/^deb-src/#deb-src/' /etc/apt/sources.list && \
+apt-get update && \
 apt-get install -y \
 	bash \
 	curl \
