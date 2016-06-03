@@ -1,4 +1,4 @@
-FROM gcr.io/google_containers/ubuntu-slim:0.2
+FROM gcr.io/google_containers/ubuntu-slim:0.3
 
 ENV TERM=xterm
 
