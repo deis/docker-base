@@ -11,4 +11,5 @@ apt-get install -y \
 	net-tools \
 	procps && \
 	apt-get clean && \
-	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/man /usr/share/doc
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/man /usr/share/doc && \
+bash -c "mkdir -p /usr/share/man/man{1..8}"
