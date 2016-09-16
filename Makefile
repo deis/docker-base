@@ -4,7 +4,7 @@ IMAGE_PREFIX ?= deis
 IMAGE := ${REGISTRY}${IMAGE_PREFIX}/base:${VERSION}
 
 build:
-	docker build -t ${IMAGE} rootfs
+	docker build --no-cache -t ${IMAGE} rootfs
 
 push: build
 	docker push ${IMAGE}
