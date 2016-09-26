@@ -9,7 +9,7 @@ A slimmed-down Ubuntu-based container image used as the basis of [Deis Workflow]
 Start your Dockerfile with this line:
 
 ```
-FROM quay.io/deis/base:0.3.1
+FROM quay.io/deis/base:v0.3.4
 ```
 
 There isn't a `:latest` tag, because tagged container images should be immutable.
@@ -18,12 +18,12 @@ The latest deis/base image is available at:
 
 * [Quay.io][]
   ```
-  docker pull quay.io/deis/base:0.3.1
+  docker pull quay.io/deis/base:v0.3.4
   ```
 
 * [Docker Hub][]
   ```
-  docker pull deis/base:0.3.1
+  docker pull deis/base:v0.3.4
   ```
 
 [Deis Workflow]: https://deis.com/
