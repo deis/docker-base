@@ -8,14 +8,16 @@ RUN sed -i -e 's/^deb-src/#deb-src/' /etc/apt/sources.list && \
     apt-get upgrade -y --no-install-recommends && \
     apt-get install -y --no-install-recommends \
         bash \
+        ca-certificates \
         curl \
         net-tools \
         procps && \
     # cleanup
     apt-get autoremove -y && \
     apt-get clean -y && \
-    # package up license files if any
-    tar -czf /usr/share/copyrights.tar.gz /usr/share/common-licenses* /usr/share/doc/*/copyright && \
+    # package up license files if any by appending to existing tar
+    COPYRIGHT_TAR='/usr/share/copyrights.tar'; \
+    gunzip $COPYRIGHT_TAR.gz; tar -rf $COPYRIGHT_TAR /usr/share/doc/*/copyright; gzip $COPYRIGHT_TAR && \
     rm -rf \
         /usr/share/doc \
         /usr/share/man \
@@ -24,7 +26,6 @@ RUN sed -i -e 's/^deb-src/#deb-src/' /etc/apt/sources.list && \
         /var/lib/apt/lists/* \
         /var/log/* \
         /var/cache/debconf/* \
-        /usr/share/common-licenses* \
         /etc/systemd \
         /lib/lsb \
         /lib/udev \
