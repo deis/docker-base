@@ -30,4 +30,4 @@ RUN sed -i -e 's/^deb-src/#deb-src/' /etc/apt/sources.list && \
         /lib/udev \
         /usr/lib/x86_64-linux-gnu/gconv/IBM* \
         /usr/lib/x86_64-linux-gnu/gconv/EBC* && \
-    mkdir -p /usr/share/man/man{1..8}
+    bash -c "mkdir -p /usr/share/man/man{1..8}"
