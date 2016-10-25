@@ -4,6 +4,8 @@ ENV TERM=xterm
 
 # disable source repos (speeds up apt-get update)
 RUN sed -i -e 's/^deb-src/#deb-src/' /etc/apt/sources.list && \
+    export DEBIAN_FRONTEND=noninteractive && \
+    apt-mark hold locales && \
     apt-get update && \
     apt-get upgrade -y --no-install-recommends && \
     apt-get install -y --no-install-recommends \
