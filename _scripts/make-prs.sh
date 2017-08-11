@@ -4,8 +4,8 @@ ARCH="$(uname)"
 ORG="deis"
 REPOS=${REPOS:-builder controller clusterator docker-go-dev dockerbuilder e2e-runner fluentd logbomb logger minio monitor nsq postgres redis steward steward-cf registry-token-refresher router workflow-manager workflow-migration}
 
-OLD_VERSION=${OLD_VERSION:-v0.3.6}
-NEW_VERSION=${NEW_VERSION:-v0.3.7}
+OLD_VERSION=${OLD_VERSION:-v0.3.7}
+NEW_VERSION=${NEW_VERSION:-v0.3.8}
 
 for repo in $REPOS; do
     echo "cloning $USER/$repo to /tmp/$repo..."
